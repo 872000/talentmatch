@@ -1,0 +1,6 @@
+# Runtime: the matching engine itself is stdlib-only.
+# These are needed only for the visual scripts (scripts/make_charts.py)
+# and the test runner.
+numpy==1.26.4
+matplotlib==3.6.3
+pytest==8.3.4
