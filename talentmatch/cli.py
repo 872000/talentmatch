@@ -177,7 +177,12 @@ def main(argv: list[str] | None = None) -> int:
     try:
         return args.func(args)
     except FileNotFoundError as exc:
-        print(f"Error: {exc}", file=sys.stderr)
+        missing = exc.filename or str(exc)
+        print(
+            f"Error: could not find {missing}. Use a bundled name like "
+            f"'backend_java' or 'frontend_react_jd' (no .md suffix).",
+            file=sys.stderr,
+        )
         return 1
 
 
